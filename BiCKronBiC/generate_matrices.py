@@ -54,8 +54,9 @@ for X in list_of_matrices:
     set_of_kroneker_triples.append((X,X,np.kron(X,X)))
 
 for i in range(len(list_of_matrices)):
-    for j in range(i+1, len(list_of_matrices)):
-        set_of_kroneker_triples.append((list_of_matrices[i],list_of_matrices[j],np.kron(list_of_matrices[i],list_of_matrices[j])))
+    for j in range(len(list_of_matrices)):
+        if i!=j:
+            set_of_kroneker_triples.append((list_of_matrices[i],list_of_matrices[j],np.kron(list_of_matrices[i],list_of_matrices[j])))
 
 list_of_kron_bicliques=[]
 
