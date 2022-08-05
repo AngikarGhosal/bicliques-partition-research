@@ -18,11 +18,20 @@ def DominoKronekerDomino(N):
     X=X.tolist()
     return X
 
-VAL=5
-X=DominoKronekerDomino(VAL)
-filename=str(VAL)+"DKDMatrix.txt"
+def DKDKD(N):
+    S=Domino(N)
+    X=np.kron(S,S)
+    Y=np.kron(X,S)
+    Y=Y.tolist()
+    return Y
+
+
+VAL=3
+#X=DominoKronekerDomino(VAL)
+Y=DKDKD(VAL)
+filename=str(VAL)+"DKDKDMatrix.txt"
 with open(filename, "w") as f:
-    for line in X:
+    for line in Y:
         for i in range(len(line)):
             line[i]=str(line[i])
         V=" ".join(line)
