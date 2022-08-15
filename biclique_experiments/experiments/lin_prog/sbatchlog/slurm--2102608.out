@@ -1,0 +1,63 @@
+../../datafiles/Constraints/3DKDconstraints.npy
+disc_part
+(49, 2373)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Aug 12 06:42:41 AM: Your problem has 2373 variables, 1 constraints, and 0 parameters.
+(CVXPY) Aug 12 06:42:41 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Aug 12 06:42:41 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Aug 12 06:42:41 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Aug 12 06:42:41 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Aug 12 06:42:41 AM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Aug 12 06:42:41 AM: Applying reduction Dcp2Cone
+(CVXPY) Aug 12 06:42:41 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Aug 12 06:42:41 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Aug 12 06:42:41 AM: Applying reduction GLPK_MI
+(CVXPY) Aug 12 06:42:41 AM: Finished problem compilation (took 1.135e-02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Aug 12 06:42:41 AM: Invoking solver GLPK_MI  to obtain a solution.
+*     0: obj =   4.900000000e+01 inf =   0.000e+00 (2324)
+*    94: obj =   6.000000000e+00 inf =   7.687e-15 (0)
++    94: mip =     not found yet >=              -inf        (1; 0)
++   350: >>>>>   1.000000000e+01 >=   6.000000000e+00  40.0% (24; 0)
++  6064: >>>>>   9.000000000e+00 >=   7.000000000e+00  22.2% (219; 22)
++ 14968: mip =   9.000000000e+00 >=   7.000000000e+00  22.2% (317; 244)
++ 26322: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (393; 467)
++ 40764: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (319; 1132)
++ 52892: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (355; 1644)
++ 66258: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (324; 2170)
++ 78851: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (310; 2682)
++ 91818: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (313; 3131)
++105471: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (312; 3564)
++119132: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (281; 3997)
++133334: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (158; 4705)
++146084: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (16; 5899)
++159219: mip =   9.000000000e+00 >=   8.000000000e+00  11.1% (15; 6241)
++166626: mip =   9.000000000e+00 >=     tree is empty   0.0% (0; 6617)
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Aug 12 06:43:47 AM: Problem status: optimal
+(CVXPY) Aug 12 06:43:47 AM: Optimal value: 9.000e+00
+(CVXPY) Aug 12 06:43:47 AM: Compilation took 1.135e-02 seconds
+(CVXPY) Aug 12 06:43:47 AM: Solver (including time spent in interface) took 6.618e+01 seconds
+
+The optimal value is 9.0
+A solution x is
+[0. 0. 0. ... 0. 0. 0.]
+17 1.0
+162 1.0
+609 1.0
+631 1.0
+966 1.0
+2086 1.0
+2129 1.0
+2154 1.0
+2287 1.0
