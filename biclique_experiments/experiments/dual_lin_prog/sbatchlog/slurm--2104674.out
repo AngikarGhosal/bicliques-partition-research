@@ -1,0 +1,84 @@
+../../datafiles/Constraints/4DKDconstraints.npy
+integer_part
+(100, 7089)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Aug 16 12:40:01 AM: Your problem has 100 variables, 1 constraints, and 0 parameters.
+(CVXPY) Aug 16 12:40:01 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Aug 16 12:40:01 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Aug 16 12:40:01 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Aug 16 12:40:01 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Aug 16 12:40:01 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Aug 16 12:40:01 AM: Applying reduction FlipObjective
+(CVXPY) Aug 16 12:40:01 AM: Applying reduction Dcp2Cone
+(CVXPY) Aug 16 12:40:01 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Aug 16 12:40:01 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Aug 16 12:40:01 AM: Applying reduction GLPK_MI
+(CVXPY) Aug 16 12:40:01 AM: Finished problem compilation (took 4.748e-02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Aug 16 12:40:01 AM: Invoking solver GLPK_MI  to obtain a solution.
+      0: obj =  -1.000000000e+02 inf =   2.812e+04 (6989)
+    640: obj =  -4.000000000e+00 inf =   4.266e-14 (0) 6
+*  1075: obj =  -1.200000000e+01 inf =   6.140e-13 (0) 4
++  1075: mip =     not found yet >=              -inf        (1; 0)
+Solution found by heuristic: -6
+Solution found by heuristic: -8
++  1960: >>>>>  -9.000000000e+00 >=  -1.100000000e+01  22.2% (24; 0)
++  4980: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (66; 27)
++  8102: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (118; 37)
++ 11185: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (170; 47)
++ 14217: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (228; 57)
++ 17527: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (223; 137)
++ 21080: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (190; 229)
++ 24680: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (173; 315)
++ 28202: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (154; 393)
++ 31740: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (140; 469)
++ 35465: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (115; 581)
++ 39049: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (87; 674)
++ 42660: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (65; 755)
++ 46319: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (45; 839)
++ 49700: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (40; 921)
++ 53245: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (29; 1002)
++ 56957: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (3; 1124)
++ 58031: mip =  -9.000000000e+00 >=     tree is empty   0.0% (0; 1141)
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Aug 16 12:41:26 AM: Problem status: optimal
+(CVXPY) Aug 16 12:41:26 AM: Optimal value: 9.000e+00
+(CVXPY) Aug 16 12:41:26 AM: Compilation took 4.748e-02 seconds
+(CVXPY) Aug 16 12:41:26 AM: Solver (including time spent in interface) took 8.461e+01 seconds
+
+The optimal value is 9.0
+A solution y is
+[ 0.  0.  0.  0.  0. -1.  0.  1.  0.  0.  0.  0.  0.  1.  1.  0.  1.  0.
+  0.  0.  0.  0.  0. -1.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.
+ -1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.
+  0.  0.  0.  0.  1.  0.  0.  1.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.
+  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.
+  0.  1.  1.  0.  0.  0.  0.  0.  1.  0.]
+5 -1.0
+7 1.0
+13 1.0
+14 1.0
+16 1.0
+23 -1.0
+28 1.0
+36 -1.0
+58 1.0
+61 1.0
+65 1.0
+80 1.0
+91 1.0
+92 1.0
+98 1.0
+DUAL
+None
+DUAL OVER

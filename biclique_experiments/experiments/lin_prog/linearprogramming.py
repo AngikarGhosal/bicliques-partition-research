@@ -8,7 +8,9 @@ import scipy as sp
 import scipy.optimize as sop
 import pickle
 from pickle_func import *
+import sys
 import cvxpy as cp
+np.set_printoptions(threshold=sys.maxsize)
 Path("../../datafiles/LinearProgramming").mkdir(parents=True, exist_ok=True)
 
 Path("../../datafiles/LinearProgramming/FractionalCover").mkdir(parents=True, exist_ok=True)
@@ -72,7 +74,9 @@ elif program=='half_part':
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x == b_two, Eye @ x >= zeros, Eye @ x <= twos])
     prob.solve(verbose=True)
     ans=(prob.value)/2
-
+print("DUAL")
+print(prob.constraints[0].dual_value)
+print("DUAL OVER")
 y=[i for i in x.value]
 if program=='half_part':
     for i in range(len(y)):
