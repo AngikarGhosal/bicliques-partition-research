@@ -22,8 +22,8 @@ Path("../../datafiles/LinearProgramming/HalfPartition").mkdir(parents=True, exis
 frac_cover_path="../../datafiles/LinearProgramming/FractionalCover/"
 frac_part_path="../../datafiles/LinearProgramming/FractionalPartition/"
 disc_cover_path="../../datafiles/LinearProgramming/DiscreteCover/"
-disc_part_path="../../datafiles/LinearProgramming/DiscretePartition"
-half_part_path="../../datafiles/LinearProgramming/HalfPartition"
+disc_part_path="../../datafiles/LinearProgramming/DiscretePartition/"
+half_part_path="../../datafiles/LinearProgramming/HalfPartition/"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--filename', type=str, default='../../datafiles/Constraints/3DKDconstraints.npy', help='constraints file path')
@@ -47,26 +47,40 @@ Eye=np.eye(Mx.shape[1])
 ones=np.ones(Mx.shape[1])
 zeros=np.zeros(Mx.shape[1])
 
+
+
 if program=='disc_cover':
     x = cp.Variable(Mx.shape[1], boolean=True)
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x >= b_eq])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=disc_cover_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_file(f,ans,x,prob,program)
 elif program=='disc_part':
     x = cp.Variable(Mx.shape[1], boolean=True)
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x == b_eq])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=disc_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_file(f,ans,x,prob,program)
 elif program=='frac_cover':
     x = cp.Variable(Mx.shape[1])
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x >= b_eq, Eye @ x >= zeros, Eye @ x <= ones])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=frac_cover_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_file(f,ans,x,prob,program)
 elif program=='frac_part':
     x = cp.Variable(Mx.shape[1])
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x == b_eq, Eye @ x >= zeros, Eye @ x <= ones])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=frac_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_file(f,ans,x,prob,program)
 elif program=='half_part':
     twos=ones*2
     b_two=b_eq*2
@@ -74,6 +88,13 @@ elif program=='half_part':
     prob = cp.Problem(cp.Minimize(c.T@x), [A_eq @ x == b_two, Eye @ x >= zeros, Eye @ x <= twos])
     prob.solve(verbose=True)
     ans=(prob.value)/2
+    filenamepath=half_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_file(f,ans,x,prob,program)
+
+
+
+
 print("DUAL")
 print(prob.constraints[0].dual_value)
 print("DUAL OVER")
