@@ -12,6 +12,23 @@ import cvxpy as cp
 import sys
 np.set_printoptions(threshold=sys.maxsize)
 
+Path("../../datafiles/DualProgramming").mkdir(parents=True, exist_ok=True)
+
+Path("../../datafiles/DualProgramming/BooleanCover").mkdir(parents=True, exist_ok=True)
+Path("../../datafiles/DualProgramming/BooleanPartition").mkdir(parents=True, exist_ok=True)
+Path("../../datafiles/DualProgramming/ContinuousCover").mkdir(parents=True, exist_ok=True)
+Path("../../datafiles/DualProgramming/ContinuousPartition").mkdir(parents=True, exist_ok=True)
+Path("../../datafiles/DualProgramming/IntegerCover").mkdir(parents=True, exist_ok=True)
+Path("../../datafiles/DualProgramming/IntegerPartition").mkdir(parents=True, exist_ok=True)
+
+
+bool_cover_path="../../datafiles/DualProgramming/BooleanCover/"
+bool_part_path="../../datafiles/DualProgramming/BooleanPartition/"
+cont_cover_path="../../datafiles/DualProgramming/ContinuousCover/"
+cont_part_path="../../datafiles/DualProgramming/ContinuousPartition/"
+int_cover_path="../../datafiles/DualProgramming/IntegerCover/"
+int_part_path="../../datafiles/DualProgramming/IntegerPartition/"
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--filename', type=str, default='../../datafiles/Constraints/3DKDconstraints.npy', help='constraints file path')
@@ -42,6 +59,9 @@ if program=='cont_part':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=cont_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 elif program=='cont_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
@@ -50,6 +70,9 @@ elif program=='cont_cover':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=cont_cover_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 if program=='integer_part':
     d=np.array([1 for i in range(Mx.shape[0])])
@@ -58,6 +81,9 @@ if program=='integer_part':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=int_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 elif program=='integer_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
@@ -66,6 +92,9 @@ elif program=='integer_cover':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=int_cover_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 elif program=='bool_part':
     d=np.array([1 for i in range(Mx.shape[0])])
@@ -74,6 +103,9 @@ elif program=='bool_part':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=bool_part_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 elif program=='bool_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
@@ -82,6 +114,9 @@ elif program=='bool_cover':
     prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
     prob.solve(verbose=True)
     ans=prob.value
+    filenamepath=bool_cover_path+"results.txt"
+    with open(filenamepath, "w") as f:
+        print_to_dual(f,ans,y,prob,program)
 
 
 # Print result.

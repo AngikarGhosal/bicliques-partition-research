@@ -1,0 +1,45 @@
+../../datafiles/Constraints/4DKDconstraints.npy
+integer_part
+(100, 7089)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Sep 05 05:51:17 AM: Your problem has 100 variables, 1 constraints, and 0 parameters.
+(CVXPY) Sep 05 05:51:17 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 05 05:51:17 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 05 05:51:17 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 05 05:51:17 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Sep 05 05:51:17 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Sep 05 05:51:17 AM: Applying reduction FlipObjective
+(CVXPY) Sep 05 05:51:17 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 05 05:51:17 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 05 05:51:17 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 05 05:51:17 AM: Applying reduction GLPK_MI
+(CVXPY) Sep 05 05:51:17 AM: Finished problem compilation (took 3.225e-02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 05 05:51:17 AM: Invoking solver GLPK_MI  to obtain a solution.
+      0: obj =  -1.000000000e+02 inf =   2.812e+04 (6989)
+    640: obj =  -4.000000000e+00 inf =   4.266e-14 (0) 6
+*  1075: obj =  -1.200000000e+01 inf =   6.140e-13 (0) 4
++  1075: mip =     not found yet >=              -inf        (1; 0)
+Solution found by heuristic: -6
+Solution found by heuristic: -8
++  1960: >>>>>  -9.000000000e+00 >=  -1.100000000e+01  22.2% (24; 0)
++  5681: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (77; 29)
++  9421: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (143; 40)
++ 13099: mip =  -9.000000000e+00 >=  -1.100000000e+01  22.2% (210; 52)
++ 16994: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (231; 120)
++ 21413: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (190; 234)
++ 25810: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (166; 341)
++ 30169: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (142; 429)
++ 34479: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (119; 562)
++ 38861: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (89; 671)
++ 43283: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (66; 763)
++ 47541: mip =  -9.000000000e+00 >=  -1.000000000e+01  11.1% (41; 865)
+slurmstepd: error: *** JOB 2179796 ON linux58 CANCELLED AT 2022-09-05T05:52:19 ***
