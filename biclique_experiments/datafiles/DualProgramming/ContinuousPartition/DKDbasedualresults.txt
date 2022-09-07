@@ -1,0 +1,3 @@
+
+The optimal value is inf
+A solution y is None

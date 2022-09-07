@@ -1,0 +1,7 @@
+DUAL
+DUAL DOES NOT EXIST
+DUAL OVER
+
+The optimal value is 4.0
+A solution x is [1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0.]
+0, 1.05, 1.011, 1.014, 1.0

@@ -1,0 +1,53 @@
+../../datafiles/Constraints/DKDKDconstraints.npy
+cont_part
+(343, 64)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Sep 07 03:45:25 AM: Your problem has 343 variables, 1 constraints, and 0 parameters.
+(CVXPY) Sep 07 03:45:25 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 07 03:45:25 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 07 03:45:25 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:45:25 AM: Compiling problem (target solver=ECOS).
+(CVXPY) Sep 07 03:45:25 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> ECOS
+(CVXPY) Sep 07 03:45:25 AM: Applying reduction FlipObjective
+(CVXPY) Sep 07 03:45:25 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 07 03:45:25 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 07 03:45:25 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 07 03:45:25 AM: Applying reduction ECOS
+(CVXPY) Sep 07 03:45:25 AM: Finished problem compilation (took 1.510e-02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:45:25 AM: Invoking solver ECOS  to obtain a solution.
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:45:25 AM: Problem status: unbounded
+(CVXPY) Sep 07 03:45:25 AM: Optimal value: inf
+(CVXPY) Sep 07 03:45:25 AM: Compilation took 1.510e-02 seconds
+(CVXPY) Sep 07 03:45:25 AM: Solver (including time spent in interface) took 6.672e-03 seconds
+
+ECOS 2.0.10 - (C) embotech GmbH, Zurich Switzerland, 2012-15. Web: www.embotech.com/ECOS
+
+It     pcost       dcost      gap   pres   dres    k/t    mu     step   sigma     IR    |   BT
+ 0  -3.375e+00  -8.337e+01  +8e+01  5e-01  8e+00  1e+00  1e+00    ---    ---    0  2  - |  -  - 
+ 1  -9.256e+01  -8.337e+01  +9e-01  5e-01  1e+01  9e+01  1e-02  0.9890  1e-04   1  2  2 |  0  0
+ 2  -8.135e+03  -8.337e+01  +1e-02  5e-01  1e+01  8e+03  2e-04  0.9890  1e-04   2  2  2 |  0  0
+ 3  -7.335e+05  -8.337e+01  +1e-04  5e-01  1e+01  7e+05  2e-06  0.9890  1e-04   2  2  2 |  0  0
+ 4  -6.615e+07  -8.338e+01  +1e-06  5e-01  1e+01  7e+07  2e-08  0.9890  1e-04   2  2  1 |  0  0
+ 5  -5.970e+09  -8.344e+01  +1e-08  5e-01  1e+01  6e+09  2e-10  0.9890  1e-04   2  1  1 |  0  0
+
+UNBOUNDED (within feastol=3.1e-10).
+Runtime: 0.006572 seconds.
+
+Traceback (most recent call last):
+  File "new_dual_program.py", line 64, in <module>
+    print_to_dual(f,ans,y,prob,program)
+  File "/home/users/ag520/bicliques-partition-research/biclique_experiments/experiments/dual_lin_prog/pickle_func.py", line 20, in print_to_dual
+    for i in range(len(y.value)):
+TypeError: object of type 'NoneType' has no len()

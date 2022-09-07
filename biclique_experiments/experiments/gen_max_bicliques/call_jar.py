@@ -9,10 +9,12 @@ parser.add_argument('--file', type=str, default='../../datafiles/Matrices/3DKDMa
 args = parser.parse_args()
 file_path=args.file
 
-matrixtype=file_path[20:-10]
+matrixtype=file_path[26:-10]
+print(matrixtype)
+
+
 biclique_path='../../datafiles/Bicliques/'+matrixtype+'Bicliques.txt'
 os.system("""java -jar MBEA.jar {} standard > {}""".format(file_path, biclique_path))
-
 
 
     

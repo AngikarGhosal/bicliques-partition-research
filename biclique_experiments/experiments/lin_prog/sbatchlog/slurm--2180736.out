@@ -1,0 +1,49 @@
+../../datafiles/Constraints/DKDKDconstraints.npy
+disc_cover
+(343, 64)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Sep 07 03:38:30 AM: Your problem has 64 variables, 1 constraints, and 0 parameters.
+(CVXPY) Sep 07 03:38:30 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 07 03:38:30 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 07 03:38:30 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:38:30 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Sep 07 03:38:30 AM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Sep 07 03:38:30 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 07 03:38:30 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 07 03:38:30 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 07 03:38:30 AM: Applying reduction GLPK_MI
+(CVXPY) Sep 07 03:38:30 AM: Finished problem compilation (took 7.709e-03 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:38:30 AM: Invoking solver GLPK_MI  to obtain a solution.
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Sep 07 03:38:30 AM: Problem status: optimal
+(CVXPY) Sep 07 03:38:30 AM: Optimal value: 8.000e+00
+(CVXPY) Sep 07 03:38:30 AM: Compilation took 7.709e-03 seconds
+(CVXPY) Sep 07 03:38:30 AM: Solver (including time spent in interface) took 1.635e-03 seconds
+DUAL
+None
+DUAL OVER
+
+The optimal value is 8.0
+A solution x is
+[1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+ 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+0 1.0
+9 1.0
+21 1.0
+26 1.0
+39 1.0
+44 1.0
+54 1.0
+59 1.0
