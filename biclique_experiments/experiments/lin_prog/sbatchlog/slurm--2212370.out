@@ -1,0 +1,38 @@
+../../datafiles/Constraints/DKDconstraints.npy
+disc_part
+(49, 16)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Sep 20 08:58:57 AM: Your problem has 16 variables, 2 constraints, and 0 parameters.
+(CVXPY) Sep 20 08:58:57 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 20 08:58:57 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 20 08:58:57 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 20 08:58:57 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Sep 20 08:58:57 AM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Sep 20 08:58:57 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 20 08:58:57 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 20 08:58:57 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 20 08:58:57 AM: Applying reduction GLPK_MI
+(CVXPY) Sep 20 08:58:57 AM: Finished problem compilation (took 6.901e-03 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 20 08:58:57 AM: Invoking solver GLPK_MI  to obtain a solution.
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Sep 20 08:58:57 AM: Problem status: infeasible
+(CVXPY) Sep 20 08:58:57 AM: Optimal value: inf
+(CVXPY) Sep 20 08:58:57 AM: Compilation took 6.901e-03 seconds
+(CVXPY) Sep 20 08:58:57 AM: Solver (including time spent in interface) took 3.054e-04 seconds
+Traceback (most recent call last):
+  File "new_linearprogramming_sum_one.py", line 66, in <module>
+    print_to_file(f,ans,x,prob,program)
+  File "/home/users/ag520/bicliques-partition-research/biclique_experiments/experiments/lin_prog/pickle_func.py", line 19, in print_to_file
+    y=[i for i in x.value]
+TypeError: 'NoneType' object is not iterable

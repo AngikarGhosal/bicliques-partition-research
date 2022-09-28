@@ -1,0 +1,39 @@
+../../datafiles/Constraints/DKDconstraints.npy
+integer_cover
+(49, 16)
+===============================================================================
+                                     CVXPY                                     
+                                    v1.1.20                                    
+===============================================================================
+(CVXPY) Sep 21 10:06:11 AM: Your problem has 49 variables, 3 constraints, and 0 parameters.
+(CVXPY) Sep 21 10:06:11 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 21 10:06:11 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 21 10:06:11 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 21 10:06:11 AM: Compiling problem (target solver=GLPK_MI).
+(CVXPY) Sep 21 10:06:11 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> GLPK_MI
+(CVXPY) Sep 21 10:06:11 AM: Applying reduction FlipObjective
+(CVXPY) Sep 21 10:06:11 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 21 10:06:11 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 21 10:06:11 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 21 10:06:11 AM: Applying reduction GLPK_MI
+(CVXPY) Sep 21 10:06:11 AM: Finished problem compilation (took 1.013e-02 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 21 10:06:11 AM: Invoking solver GLPK_MI  to obtain a solution.
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+(CVXPY) Sep 21 10:06:11 AM: Problem status: infeasible
+(CVXPY) Sep 21 10:06:11 AM: Optimal value: -inf
+(CVXPY) Sep 21 10:06:11 AM: Compilation took 1.013e-02 seconds
+(CVXPY) Sep 21 10:06:11 AM: Solver (including time spent in interface) took 6.292e-04 seconds
+Traceback (most recent call last):
+  File "new_dual_program.py", line 97, in <module>
+    print_to_dual(f,ans,y,prob,program)
+  File "/home/users/ag520/bicliques-partition-research/biclique_experiments/experiments/dual_lin_prog/pickle_func.py", line 20, in print_to_dual
+    for i in range(len(y.value)):
+TypeError: object of type 'NoneType' has no len()

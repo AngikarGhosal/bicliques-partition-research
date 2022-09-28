@@ -6,5 +6,5 @@ files=glob.glob('../../datafiles/Constraints/**/*.npy', recursive=True)
 nfiles=['../../datafiles/Constraints/DKDconstraints.npy','../../datafiles/Constraints/DKDKDconstraints.npy']
 for f in nfiles:
     for prog in programs:
-        os.system("""python3 sbatch_exec.py -x="train-s" -r="python3 new_linearprogramming.py --filename={} --program={}" """.format(f, prog))
+        os.system("""python3 sbatch_exec.py -x="train-s" -r="python3 new_linearprogramming_sum_one.py --filename={} --program={}" """.format(f, prog))
         #os.system("python3 new_linearprogramming.py --filename={} --program={}".format(f, prog))

@@ -31,7 +31,7 @@ int_part_path="../../datafiles/DualProgramming/IntegerPartition/"
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--filename', type=str, default='../../datafiles/Constraints/3DKDconstraints.npy', help='constraints file path')
+parser.add_argument('--filename', type=str, default='../../datafiles/Constraints/DKDNextNEWconstraints.npy', help='constraints file path')
 parser.add_argument('--program', type=str, default='cont_part', help='kind of program to run')
 args = parser.parse_args()
 filepath=args.filename

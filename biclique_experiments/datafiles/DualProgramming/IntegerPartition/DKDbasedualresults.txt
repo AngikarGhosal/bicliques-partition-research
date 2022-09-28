@@ -1,3 +1,9 @@
 
-The optimal value is inf
-A solution y is None
+The optimal value is 1.0
+A solution y is [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 1.]
+48, 1.0
+DUAL
+DUAL DOES NOT EXIST
+DUAL OVER

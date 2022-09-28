@@ -47,6 +47,7 @@ integrality_c=np.array([0 for i in range(Mx.shape[1])])
 bounds=(0,1)
 
 A_eq=Mx
+#A_eq or Mx is of dim m x n, then, y is also of shape m, d is also of shape m, b is of shape n
 print(Mx.shape)
 Eye=np.eye(Mx.shape[0])
 ones=np.ones(Mx.shape[0])
@@ -56,7 +57,7 @@ if program=='cont_part':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0])
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=cont_part_path+Z+"results.txt"
@@ -67,7 +68,7 @@ elif program=='cont_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0])
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=cont_cover_path+Z+"results.txt"
@@ -78,7 +79,7 @@ if program=='integer_part':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0], integer=True)
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=int_part_path+Z+"results.txt"
@@ -89,7 +90,7 @@ elif program=='integer_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0], integer=True)
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=int_cover_path+Z+"results.txt"
@@ -100,7 +101,7 @@ elif program=='bool_part':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0], boolean=True)
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=bool_part_path+Z+"results.txt"
@@ -111,7 +112,7 @@ elif program=='bool_cover':
     d=np.array([1 for i in range(Mx.shape[0])])
     y = cp.Variable(Mx.shape[0], boolean=True)
     b_new=b_eq=np.array([1 for i in range(Mx.shape[1])])
-    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros])
+    prob = cp.Problem(cp.Maximize(d.T@y), [A_eq.T @ y <= b_new, y>=zeros, ones.T@y==1])
     prob.solve(verbose=True)
     ans=prob.value
     filenamepath=bool_cover_path+Z+"results.txt"

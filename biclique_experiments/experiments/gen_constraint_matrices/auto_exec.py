@@ -9,5 +9,5 @@ for i in range(len(f_list)):
     g_name=g_list[i][22:-9]
     assert(f_name==g_name)
     os.system("""python3 sbatch_exec.py -x="train-s" -r="python3 constraints.py --bicfile={} --edgefile={}" """.format(f_list[i],g_list[i]))
-    os.system("python3 constraints.py --bicfile={} --edgefile={}".format(f_list[i],g_list[i]))
+    #os.system("python3 constraints.py --bicfile={} --edgefile={}".format(f_list[i],g_list[i]))
 
